@@ -1,0 +1,24 @@
+# Node (frontend + backend)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Python (backend)
+__pycache__/
+*.pyc
+*.pyo
+venv/
+
+# Environment
+.env
+
+# Build outputs
+build/
+dist/
+
+# VS Code
+.vscode/
+
+# OS Files
+.DS_Store
+Thumbs.db
