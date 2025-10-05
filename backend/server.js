@@ -10,6 +10,10 @@ app.use(bodyParser.json());
 
 const pythonCmd = process.platform === "win32" ? "python" : "python3";
 
+app.get('/', (req, res) => {
+  res.send('Backend is running!');
+});
+
 app.post("/predict", (req, res) => {
   const data = req.body.features; // expect an array like [actual_price, discount_percentage, rating, rating_count]
   if (!Array.isArray(data)) return res.status(400).json({ error: "features must be an array" });
