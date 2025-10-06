@@ -5,7 +5,10 @@ const { spawn } = require("child_process");
 const path = require("path");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: ["https://product-price-optimization-app-frontend.onrender.com"],
+  methods: ["GET", "POST"],
+}));
 app.use(bodyParser.json());
 
 const pythonCmd = process.platform === "win32" ? "python" : "python3";

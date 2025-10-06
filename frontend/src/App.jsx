@@ -40,7 +40,7 @@ function App() {
             ];
 
             // 3. API Call (same as old logic, but using modern async/await)
-            const response = await fetch('http://localhost:5000/predict', {
+            const response = await fetch('https://product-price-optimization-app1.onrender.com/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
