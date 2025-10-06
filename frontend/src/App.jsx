@@ -1,5 +1,15 @@
 import React, { useState } from 'react';
 import './App.css'; // You can add CSS styling here later
+import logo from './assets/logo.webp';
+
+<div style={styles.container}>
+    {/* Logo */}
+    <div style={styles.logoContainer}>
+        <img src={logo} alt="Vita Logo" style={styles.logo} />
+    </div>
+
+    <h1 style={styles.h1}>Price Optimization AI 🤖</h1>
+</div>
 
 // Helper for professional Indian Rupee formatting
 const priceFormatter = new Intl.NumberFormat('en-IN', {
@@ -14,7 +24,7 @@ function App() {
     const [discount, setDiscount] = useState(0.15);
     const [rating, setRating] = useState(4.5);
     const [count, setCount] = useState(1200);
-    
+
     const [optimizedPrice, setOptimizedPrice] = useState('₹--.--');
     const [errorMessage, setErrorMessage] = useState('');
     const [loading, setLoading] = useState(false);
@@ -24,7 +34,7 @@ function App() {
         setLoading(true);
         setOptimizedPrice('...Calculating...');
         setErrorMessage('');
-        
+
         try {
             // Validate input
             if (isNaN(price) || isNaN(discount) || isNaN(rating) || isNaN(count)) {
@@ -49,12 +59,12 @@ function App() {
             });
 
             const data = await response.json();
-            
+
             // 4. Handle Server Response
             if (!response.ok || data.error) {
                 throw new Error(data.details || data.error || 'Unknown server error.');
             }
-            
+
             // 5. Update STATE on Success (React automatically updates the UI)
             const newPrice = data.optimized_price;
             if (typeof newPrice === 'number') {
@@ -83,23 +93,23 @@ function App() {
                 {/* Input for Price */}
                 <div style={styles.inputGroup}>
                     <label style={styles.label} htmlFor="price">Actual Product Price:</label>
-                    <input 
-                        type="number" id="price" 
-                        value={price} 
+                    <input
+                        type="number" id="price"
+                        value={price}
                         onChange={(e) => setPrice(e.target.value)} // Update state on change
-                        style={styles.input} 
+                        style={styles.input}
                         step="0.01"
                     />
                 </div>
-                
+
                 {/* Input for Discount */}
                 <div style={styles.inputGroup}>
                     <label style={styles.label} htmlFor="discount">Discount Percentage (e.g., 0.15 for 15%):</label>
-                    <input 
-                        type="number" id="discount" 
-                        value={discount} 
+                    <input
+                        type="number" id="discount"
+                        value={discount}
                         onChange={(e) => setDiscount(e.target.value)}
-                        style={styles.input} 
+                        style={styles.input}
                         step="0.01"
                     />
                 </div>
@@ -107,11 +117,11 @@ function App() {
                 {/* Input for Rating */}
                 <div style={styles.inputGroup}>
                     <label style={styles.label} htmlFor="rating">Current Rating (0-5):</label>
-                    <input 
-                        type="number" id="rating" 
-                        value={rating} 
+                    <input
+                        type="number" id="rating"
+                        value={rating}
                         onChange={(e) => setRating(e.target.value)}
-                        style={styles.input} 
+                        style={styles.input}
                         step="0.1"
                     />
                 </div>
@@ -119,17 +129,17 @@ function App() {
                 {/* Input for Count */}
                 <div style={styles.inputGroup}>
                     <label style={styles.label} htmlFor="count">Total Rating Count:</label>
-                    <input 
-                        type="number" id="count" 
-                        value={count} 
+                    <input
+                        type="number" id="count"
+                        value={count}
                         onChange={(e) => setCount(e.target.value)}
-                        style={styles.input} 
+                        style={styles.input}
                     />
                 </div>
 
                 {/* Button */}
-                <button 
-                    onClick={getPrediction} 
+                <button
+                    onClick={getPrediction}
                     disabled={loading} // Disable button while loading
                     style={loading ? styles.buttonLoading : styles.button}
                 >
@@ -141,7 +151,7 @@ function App() {
                     <div style={styles.resultLabel}>Recommended Optimized Price:</div>
                     <span style={styles.resultValue}>{optimizedPrice}</span>
                 </div>
-                
+
                 {/* Error Display */}
                 {errorMessage && (
                     <p style={styles.error}>{errorMessage}</p>
@@ -241,5 +251,14 @@ const styles = {
         fontWeight: 600,
         marginTop: '15px',
         textAlign: 'center',
+    },
+    logoContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        marginBottom: '20px',
+    },
+    logo: {
+        width: '120px', // adjust as needed
+        height: 'auto',
     }
 };
