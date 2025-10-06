@@ -1,24 +1,26 @@
 # Use official Node.js image
 FROM node:18-bullseye
 
-# Install Python
+# Install Python and pip
 RUN apt-get update && apt-get install -y python3 python3-pip
 
-# Set working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy package files first (for caching)
-COPY ./package*.json ./
+# Copy Node.js package files
+COPY package*.json ./
 
 # Install Node dependencies
 RUN npm install
 
-# Copy Python requirements and install them
-COPY ./python/requirements.txt ./python/requirements.txt
-RUN pip3 install -r ./python/requirements.txt
+# Copy the Python folder including requirements.txt
+COPY python/ ./python/
 
-# Copy all other files (server.js, python folder, etc.)
-COPY ./ ./
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r ./python/requirements.txt
+
+# Copy all remaining backend files (server.js, etc.)
+COPY . .
 
 # Expose the port Render uses
 ENV PORT=5000
