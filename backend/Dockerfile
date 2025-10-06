@@ -13,6 +13,10 @@ COPY ./package*.json ./
 # Install Node dependencies
 RUN npm install
 
+# Copy Python requirements and install them
+COPY ./python/requirements.txt ./python/requirements.txt
+RUN pip3 install -r ./python/requirements.txt
+
 # Copy all other files (server.js, python folder, etc.)
 COPY ./ ./
 
