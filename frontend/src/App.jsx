@@ -2,15 +2,6 @@ import React, { useState } from 'react';
 import './App.css'; // You can add CSS styling here later
 import logo from './assets/logo.webp';
 
-<div style={styles.container}>
-    {/* Logo */}
-    <div style={styles.logoContainer}>
-        <img src={logo} alt="Vita Logo" style={styles.logo} />
-    </div>
-
-    <h1 style={styles.h1}>Price Optimization AI 🤖</h1>
-</div>
-
 // Helper for professional Indian Rupee formatting
 const priceFormatter = new Intl.NumberFormat('en-IN', {
     style: 'currency',
@@ -88,6 +79,11 @@ function App() {
     return (
         <div style={styles.body}>
             <div style={styles.container}>
+                {/* Logo */}
+                <div style={styles.logoContainer}>
+                    <img src={logo} alt="Vita Logo" style={styles.logo} />
+                </div>
+
                 <h1 style={styles.h1}>Price Optimization AI 🤖</h1>
 
                 {/* Input for Price */}
