@@ -52,7 +52,7 @@ The goal is to help e-commerce platforms and sellers **maximize profit margins**
 
 ----
 📸 App Preview
-The UI
-<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/d00cf514-f4fd-4867-9dac-9451f75d3fa7" />
-Price optimzation preview
-<img width="672" height="836" alt="image" src="https://github.com/user-attachments/assets/06c55b4d-726a-43f6-967f-1d9500c32372" />
+### User Interface
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d00cf514-f4fd-4867-9dac-9451f75d3fa7" />
+📊 Price Optimization Preview
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/06c55b4d-726a-43f6-967f-1d9500c32372" />
