@@ -51,8 +51,13 @@ The goal is to help e-commerce platforms and sellers **maximize profit margins**
   4) Rating Count
 
 ----
+
 📸 App Preview
-### User Interface
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/d00cf514-f4fd-4867-9dac-9451f75d3fa7" />
+
+### 🧭 User Interface
+
+<img width="500" height="500" alt="App UI" src="https://github.com/user-attachments/assets/d00cf514-f4fd-4867-9dac-9451f75d3fa7" />
+
 ### 📊 Price Optimization Preview
-<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/06c55b4d-726a-43f6-967f-1d9500c32372" />
+
+<img width="500" height="500" alt="Price Optimization Demo" src="https://github.com/user-attachments/assets/06c55b4d-726a-43f6-967f-1d9500c32372" />
