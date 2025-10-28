@@ -100,7 +100,7 @@ function App() {
 
                 {/* Input for Discount */}
                 <div style={styles.inputGroup}>
-                    <label style={styles.label} htmlFor="discount">Discount Percentage (e.g., 0.15 for 15%):</label>
+                    <label style={styles.label} htmlFor="discount">Discount Percentage:</label>
                     <input
                         type="number" id="discount"
                         value={discount}
